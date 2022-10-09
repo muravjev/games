@@ -1,11 +1,14 @@
 {
   "name": "@muravjev/games",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Games monorepo",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "clean": "rimraf \"**/node_modules\" && pnpm -r clean",
+    "fresh": "pnpm clean && pnpm i"
+  },
   "dependencies": {},
   "engines": {
     "node": ">=14.6.0",
