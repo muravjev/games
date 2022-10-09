@@ -4,11 +4,17 @@ importers:
 
   .:
     specifiers:
-      '@muravjev/eslint-config-monorepo': workspace:^0.1.0
+      '@commitlint/cli': ^17.1.2
+      '@commitlint/config-conventional': ^17.1.0
+      '@muravjev/commitlint-config-monorepo': workspace:*
+      '@muravjev/eslint-config-monorepo': workspace:*
       '@muravjev/prettier-config-monorepo': workspace:*
       eslint: ^8.25.0
       prettier: ^2.7.1
     dependencies:
+      '@commitlint/cli': 17.1.2
+      '@commitlint/config-conventional': 17.1.0
+      '@muravjev/commitlint-config-monorepo': link:configs/monorepo/commitlint-config-monorepo
       '@muravjev/eslint-config-monorepo': link:configs/monorepo/eslint-config-monorepo
       '@muravjev/prettier-config-monorepo': link:configs/monorepo/prettier-config-monorepo
       eslint: 8.25.0
