@@ -1,5 +1,11 @@
 # @muravjev/ts-config-app-next
 
+## 0.1.0
+
+### Minor Changes
+
+- Setup app configs
+
 ## 1.0.0
 
 ### Patch Changes
