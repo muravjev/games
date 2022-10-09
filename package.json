@@ -10,10 +10,14 @@
     "fresh": "pnpm clean && pnpm i",
     "format": "prettier",
     "format:check": "pnpm format --check --debug-check",
-    "format:fix": "pnpm format --write"
+    "format:fix": "pnpm format --write",
+    "lint": "eslint",
+    "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
+    "@muravjev/eslint-config-monorepo": "workspace:^0.1.0",
     "@muravjev/prettier-config-monorepo": "workspace:*",
+    "eslint": "^8.25.0",
     "prettier": "^2.7.1"
   },
   "engines": {
