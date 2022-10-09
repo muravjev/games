@@ -1,12 +1,37 @@
 {
   "name": "@muravjev/games",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Games monorepo",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
   "license": "MIT",
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "clean": "rimraf \"**/node_modules\" && pnpm -r clean",
+    "fresh": "pnpm clean && pnpm i",
+    "format": "prettier",
+    "format:check": "pnpm format --check --debug-check",
+    "format:fix": "pnpm format --write",
+    "lint": "eslint",
+    "lint:fix": "pnpm lint --fix",
+    "commitlint": "commitlint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.25.0",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@muravjev/commitlint-config-monorepo": "workspace:*",
+    "@muravjev/eslint-config-monorepo": "workspace:*",
+    "@muravjev/prettier-config-monorepo": "workspace:*",
+    "eslint": "^8.25.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,md,json,yaml}": "pnpm format:fix",
+    "*.{js,ts,tsx}": "pnpm lint:fix"
+  },
   "engines": {
     "node": ">=14.6.0",
     "pnpm": ">=7.10.0",
