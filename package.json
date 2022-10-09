@@ -1,0 +1,17 @@
+{
+  "name": "@muravjev/games",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Games monorepo",
+  "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.6.0",
+    "pnpm": ">=7.10.0",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
+  "packageManager": "pnpm@7.10.0"
+}
