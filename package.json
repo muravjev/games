@@ -7,9 +7,15 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf \"**/node_modules\" && pnpm -r clean",
-    "fresh": "pnpm clean && pnpm i"
+    "fresh": "pnpm clean && pnpm i",
+    "format": "prettier",
+    "format:check": "pnpm format --check --debug-check",
+    "format:fix": "pnpm format --write"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@muravjev/prettier-config-monorepo": "workspace:*",
+    "prettier": "^2.7.1"
+  },
   "engines": {
     "node": ">=14.6.0",
     "pnpm": ">=7.10.0",
