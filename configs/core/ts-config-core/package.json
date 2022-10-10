@@ -1,13 +1,13 @@
 {
   "name": "@muravjev/ts-config-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Shared core typescript config",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
   "license": "MIT",
   "main": "tsconfig.json",
   "peerDependencies": {
-    "@types/node": "18.8.1",
+    "@types/node": "18.8.3",
     "typescript": "4.8.4"
   }
 }
