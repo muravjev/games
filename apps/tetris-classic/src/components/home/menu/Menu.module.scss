@@ -1,0 +1,58 @@
+@keyframes ani-menu {
+  0% {
+    transform: scale(0.2) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes ani-button {
+  0% {
+    transform: scale(0.1) rotate(0);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.menu {
+  display: grid;
+
+  width: 320px;
+  height: 160px;
+
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.animate {
+  animation: ani-menu 2s linear 1;
+  > button {
+    animation: ani-button 2s linear 1;
+  }
+}
+
+@mixin button($color) {
+  background: darken($color, 5%);
+  &:hover {
+    background: darken($color, 10%);
+  }
+}
+
+.learn {
+  @include button(#00a4e4);
+}
+
+.play {
+  @include button(#c1d82f);
+}
+
+.puzzle {
+  @include button(#fbb034);
+}
+
+.settings {
+  @include button(#ff0000);
+}

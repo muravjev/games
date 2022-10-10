@@ -1,0 +1,30 @@
+.layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(auto, 1fr) mobile(padding) auto mobile(padding) minmax(auto, 1fr);
+  grid-template-rows: 1fr auto auto auto 1fr;
+}
+
+.top {
+  grid-area: 2/1/2/6;
+}
+
+.bottom {
+  grid-area: 4/1/4/6;
+}
+
+.left {
+  grid-area: 3/1;
+  justify-self: start;
+}
+
+.right {
+  grid-area: 3/5;
+  justify-self: end;
+}
+
+.middle {
+  grid-area: 3/3;
+  justify-self: center;
+}

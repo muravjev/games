@@ -1,0 +1,17 @@
+{
+  "control": "Управление",
+  "score": "Счёт",
+  "lines": "Линий",
+  "level": "Уровень",
+  "move-left": "Сместить влево",
+  "move-right": "Сместить вправо",
+  "rotate-left": "Повернуть влево",
+  "rotate-right": "Повернуть вправо",
+  "hard-drop": "Сбросить вниз",
+  "soft-drop": "Мягкое падение",
+  "play-start": "Начать",
+  "play-pause": "Пауза",
+  "play-resume": "Возобновить",
+  "play-again": "Играть еще",
+  "control-space": "Пробел"
+}

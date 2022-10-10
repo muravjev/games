@@ -1,0 +1,19 @@
+.layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.debug {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  font-size: 20px;
+  background: lightyellow;
+  border: 1px solid darkgoldenrod;
+  color: red;
+  padding: 6px 12px;
+  border-radius: 6px;
+}

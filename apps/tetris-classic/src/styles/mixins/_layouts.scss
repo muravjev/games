@@ -1,0 +1,7 @@
+@function mobile($key) {
+  @return map-get-px($mobile, $key);
+}
+
+@function desktop($key) {
+  @return map-get-px($desktop, $key);
+}

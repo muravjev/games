@@ -1,0 +1,15 @@
+.body {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(auto, 1fr) mobile(padding) auto mobile(padding) minmax(auto, 1fr);
+  grid-template-rows: auto 1fr auto;
+}
+
+.board {
+  grid-area: 1/3/4;
+}
+
+.info {
+  grid-area: 1/5;
+}

@@ -1,0 +1,16 @@
+{
+  "mobile": {
+    "padding": 16,
+    "appBarHeight": 56,
+    "infoHeight": 55,
+    "infoWidth": 180,
+    "buttonsMinWidth": 44,
+    "buttonsMaxWidth": 64
+  },
+  "desktop": {
+    "padding": 24,
+    "appBarHeight": 64,
+    "infoHeight": 75,
+    "infoWidth": 180
+  }
+}
