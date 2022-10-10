@@ -1,0 +1,7 @@
+{
+  "extends": "@muravjev/ts-config-app-next",
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["next-env.d.ts", "src"]
+}

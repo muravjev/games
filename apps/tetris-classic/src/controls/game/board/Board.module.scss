@@ -1,0 +1,17 @@
+.board {
+  display: grid;
+  padding: 0 0 1px 1px;
+  position: relative;
+  > div {
+    margin: 0 0 -1px -1px;
+    border-width: 1px;
+    border-style: solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    font-weight: bold;
+    color: black;
+  }
+}

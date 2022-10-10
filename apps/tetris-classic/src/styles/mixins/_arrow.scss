@@ -1,0 +1,40 @@
+@mixin arrow($size) {
+  &:before,
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    border: $size solid transparent;
+    margin-left: -$size;
+  }
+}
+
+@mixin arrow_up($bd, $bg, $size) {
+  @include arrow($size);
+  &:before {
+    border-bottom-color: $bd;
+  }
+  &:after {
+    border-bottom-color: $bg;
+    margin-top: 1px;
+  }
+  &:after,
+  &:before {
+    top: -$size * 2;
+  }
+}
+
+@mixin arrow_down($bd, $bg, $size) {
+  @include arrow($size);
+  &:before {
+    border-top-color: $bd;
+  }
+  &:after {
+    border-top-color: $bg;
+    margin-bottom: 1px;
+  }
+  &:after,
+  &:before {
+    bottom: -$size * 2;
+  }
+}

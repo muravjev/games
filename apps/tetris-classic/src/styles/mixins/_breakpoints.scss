@@ -1,0 +1,11 @@
+@mixin media-up($breakpoint) {
+  @if map-has-val($breakpoints, $breakpoint) {
+    @media (min-width: map-get-px($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@function screen($breakpoint) {
+  @return map-get-px($breakpoints, $breakpoint);
+}

@@ -1,0 +1,17 @@
+.error {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 4fr auto 24px auto 12fr;
+  justify-items: center;
+}
+
+.message {
+  grid-area: 2/1;
+  text-align: center;
+}
+
+.button {
+  grid-area: 4/1;
+}

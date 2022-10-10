@@ -1,0 +1,42 @@
+@import 'core';
+
+.wrapper {
+  position: relative;
+}
+
+.caption {
+  text-align: center;
+  margin: mobile(padding) / 3 0;
+  @include media-up(sm) {
+    margin: desktop(padding) / 3 0;
+  }
+}
+
+.close {
+  position: absolute;
+  top: -12px;
+  right: -6px;
+  @include media-up(sm) {
+    top: -18px;
+    right: -12px;
+  }
+}
+
+.picker {
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+  padding: 12px;
+
+  margin: -mobile(padding);
+  > *:not(:first-child) {
+    margin-left: mobile(padding);
+  }
+
+  @include media-up(sm) {
+    margin: -desktop(padding);
+    > *:not(:first-child) {
+      margin-left: desktop(padding);
+    }
+  }
+}

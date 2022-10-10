@@ -1,0 +1,26 @@
+.info {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto minmax(mobile(padding), 1fr) auto minmax(mobile(padding), 1fr);
+}
+
+.score {
+  grid-area: 1/1;
+}
+
+.lines {
+  grid-area: 1/1;
+  justify-self: start;
+}
+
+.level {
+  grid-area: 1/1;
+  justify-self: end;
+}
+
+.next {
+  grid-area: 3/1;
+  align-self: center;
+}

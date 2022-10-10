@@ -1,0 +1,35 @@
+@import 'core';
+
+html,
+body {
+  height: 100%;
+  touch-action: none;
+}
+
+html {
+  overflow-y: hidden; //< Remove scrollbar for desktop as we put slider after layout
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Adjusted', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-touch-callout: none; //< prevent popover on images and links on iphones
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+// sample {
+//   max-width: screen(lg);
+//
+//   @include media-up(sm) {
+//     color: green;
+//   }
+// }

@@ -1,0 +1,19 @@
+.option {
+  flex-flow: column;
+}
+
+.name {
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.hues {
+  display: flex;
+}
+
+.hue {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 -2px;
+}

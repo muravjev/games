@@ -1,0 +1,20 @@
+@import 'core';
+
+.button {
+  padding: mobile(padding) / 2;
+  border-radius: 6px;
+  min-width: 100px;
+  font-size: 24px !important;
+  color: white;
+  border: 1px solid rgba(27, 31, 36, 0.25);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  transition: background-color 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@include media-up(sm) {
+  .button {
+    padding: desktop(padding) / 2;
+  }
+}

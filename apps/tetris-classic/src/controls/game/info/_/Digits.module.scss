@@ -1,0 +1,26 @@
+.digits {
+  white-space: nowrap;
+  margin-left: -5px;
+
+  > span {
+    display: inline-block;
+    margin-left: 5px;
+    border-radius: 6px;
+    text-align: center;
+
+    font-size: 18px;
+    width: 22px;
+    line-height: 22px;
+  }
+}
+
+.digit {
+  font-weight: bold;
+  background: black;
+  border-color: black;
+  color: white;
+}
+
+.zero {
+  font-weight: normal;
+}

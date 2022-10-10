@@ -1,0 +1,20 @@
+@import 'core';
+
+.name {
+  margin-left: 0.5rem;
+}
+
+.flag {
+  > svg {
+    height: mobile(padding) / 2 * 3;
+    display: block;
+  }
+}
+
+@include media-up(sm) {
+  .flag {
+    > svg {
+      height: desktop(padding) / 2 * 3;
+    }
+  }
+}

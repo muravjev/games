@@ -1,0 +1,21 @@
+.logo {
+  flex-grow: 1;
+  display: inline-flex;
+  a {
+    display: inline-flex;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tetris {
+  width: 72px;
+}
+
+.a {
+  width: 48px;
+  margin-left: 6px;
+  stroke-width: 0.2;
+}

@@ -1,0 +1,3 @@
+@function prefersColorScheme($mode, $var) {
+  @return map-get-val(map-get-val($prefersColorScheme, $mode), $var);
+}

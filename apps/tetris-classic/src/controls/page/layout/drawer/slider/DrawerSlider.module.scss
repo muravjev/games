@@ -1,0 +1,10 @@
+.slider {
+  float: left; //< Required for work of negative margin.
+  width: 100%; //< Required for work of negative margin.
+  position: relative;
+}
+
+.wrapper {
+  overflow: hidden; //< Hide 'hidden' drawer.
+  position: relative;
+}

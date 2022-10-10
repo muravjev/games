@@ -1,0 +1,13 @@
+@import 'core';
+
+.option {
+  padding: mobile(padding) / 2;
+  border-radius: 6px;
+  min-width: 100px;
+}
+
+@include media-up(sm) {
+  .option {
+    padding: desktop(padding) / 2;
+  }
+}

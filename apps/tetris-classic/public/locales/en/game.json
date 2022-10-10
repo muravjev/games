@@ -1,0 +1,17 @@
+{
+  "control": "Control",
+  "score": "Score",
+  "lines": "Lines",
+  "level": "Level",
+  "move-left": "Move left",
+  "move-right": "Move right",
+  "rotate-left": "Rotate left",
+  "rotate-right": "Rotate right",
+  "hard-drop": "Hard drop",
+  "soft-drop": "Soft drop",
+  "play-start": "Start",
+  "play-pause": "Pause",
+  "play-resume": "Resume",
+  "play-again": "Play again",
+  "control-space": "Space"
+}

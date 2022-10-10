@@ -1,0 +1,15 @@
+.main {
+  height: 100vh;
+  width: 100%;
+
+  --fallback-background: #{prefersColorScheme(light, background)};
+  --fallback-stroke-color: #{prefersColorScheme(light, color)};
+  --fallback-stroke-width: 0.6;
+  @media (prefers-color-scheme: dark) {
+    --fallback-background: #{prefersColorScheme(dark, background)};
+    --fallback-stroke-color: #{prefersColorScheme(dark, color)};
+    --fallback-stroke-width: 0.2;
+  }
+
+  background: var(--fallback-background);
+}
