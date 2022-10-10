@@ -1,6 +1,6 @@
 {
   "name": "tetris-classic",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "clean": "rimraf .next tsconfig.tsbuildinfo .coverage",
@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@indigotree/dart-sass-json-importer": "^0.2.0",
-    "@muravjev/eslint-config-app-next": "workspace:0.1.0",
-    "@muravjev/ts-config-app-next": "workspace:0.1.0",
+    "@muravjev/eslint-config-app-next": "workspace:0.2.0",
+    "@muravjev/ts-config-app-next": "workspace:1.0.0",
     "@svgr/webpack": "^6.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

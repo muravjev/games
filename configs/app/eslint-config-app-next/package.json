@@ -1,6 +1,6 @@
 {
   "name": "@muravjev/eslint-config-app-next",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Shared eslint config for app (nextjs) projects",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
