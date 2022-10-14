@@ -1,4 +1,4 @@
-# Shared monorepo Commitlint config
+# Shared Commitlint config
 
 This is part of a [@muravjev/games](https://github.com/muravjev/games) monorepo.
 
