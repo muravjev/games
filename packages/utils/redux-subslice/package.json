@@ -1,6 +1,6 @@
 {
   "name": "@muravjev/utils-redux-subslice",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Muravjev Sergey",
   "description": "Shared redux subslice utils",
