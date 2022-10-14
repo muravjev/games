@@ -1,4 +1,4 @@
-# Shared typescript config core
+# Shared typescript config for monorepo (ts) and lib (ts) packages
 
 This is part of a [@muravjev/games](https://github.com/muravjev/games) monorepo.
 
