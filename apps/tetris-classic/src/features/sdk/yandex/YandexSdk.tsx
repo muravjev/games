@@ -7,11 +7,13 @@ declare global {
     }
 }
 
-interface IYaGames {}
+interface IYaGames {
+    foo(): () => void;
+}
 
 class YandexSdkImpl implements ISdk {
     constructor(private readonly api: IYaGames, public readonly name: string) {}
-    public mess: string = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY';
+    public mess = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY';
     getUser: () => ISdkUser = () => ({ id: '200', name: 'yandex' });
     getPreferredMode: () => Promise<string> = () => Promise.resolve('light');
     getPreferredLocale: () => Promise<string> = () => Promise.resolve('ru');

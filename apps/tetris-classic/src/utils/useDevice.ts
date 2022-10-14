@@ -15,7 +15,7 @@ export type Device = {
 
 export function getDevice(): Device {
     const ua = new UAParser();
-    const { type, model, vendor } = ua.setUA(window.navigator.userAgent).getDevice();
+    const { type, model } = ua.setUA(window.navigator.userAgent).getDevice();
     const isTablet = type === 'tablet';
     const isMobile = type === 'mobile';
     const isTouchScreen = isMobile || isTablet;

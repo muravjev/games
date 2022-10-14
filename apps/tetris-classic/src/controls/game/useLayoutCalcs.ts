@@ -18,7 +18,7 @@ function getLayoutCalcs(
     device: Device
 ): GameLayoutCalcs {
     const { isTouchScreen } = device;
-    const { availWidth, availHeight } = availSize;
+    const { availWidth } = availSize;
 
     const layoutElement = div;
     const layoutWidth = layoutElement.clientWidth;

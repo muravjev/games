@@ -1,9 +1,9 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Dispatch } from 'features/hooks';
+import type { TState, Dispatch } from 'features/hooks';
 import type { ESounds } from 'config/sounds';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 
 export type SoundsState = {
     id?: ESounds;
@@ -11,7 +11,7 @@ export type SoundsState = {
 
 const initialState: SoundsState = {};
 
-export const createSoundsSubslice = createSubslice({
+export const soundsOptions = declareSubslice({
     name: 'sounds',
     initialState,
     selectors: {
@@ -24,7 +24,7 @@ export const createSoundsSubslice = createSubslice({
     }
 });
 
-export const createSounds = (Subslice: Subslice<typeof createSoundsSubslice>) => {
+export const createSounds = (Subslice: Subslice<TState, typeof soundsOptions>) => {
     const { select } = Subslice.selectors;
     const { updated } = Subslice.actions;
 

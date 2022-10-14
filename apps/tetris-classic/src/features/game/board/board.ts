@@ -1,11 +1,11 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Thunk } from 'features/hooks';
+import type { TState, Thunk } from 'features/hooks';
 import type { IBoardConfig } from './boardConfig';
 import type { Matrix } from 'utils/matrix';
 import type { Figure } from 'features/game/game';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 import { createMatrix } from 'utils/matrix';
 
 import * as U from './boardUtils';
@@ -20,7 +20,7 @@ const initialState: BoardState = {
     merge: [[]]
 };
 
-export const createBoardSubslice = createSubslice({
+export const boardOptions = declareSubslice({
     name: 'board',
     initialState,
     selectors: {
@@ -45,7 +45,7 @@ export const createBoardSubslice = createSubslice({
 });
 
 export const createBoard = (
-    Subslice: Subslice<typeof createBoardSubslice>,
+    Subslice: Subslice<TState, typeof boardOptions>,
     BoardConfig: IBoardConfig
 ) => {
     const { selectBasis, selectMerge } = Subslice.selectors;

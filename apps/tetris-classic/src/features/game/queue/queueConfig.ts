@@ -1,6 +1,7 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
+import type { TState } from 'features/hooks';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 import { figures } from 'config/game/figures';
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
 export type QueueConfig = typeof initialState;
 export type QueueConfigFigure = typeof initialState['figures'][number];
 
-export const createQueueConfigSubslice = createSubslice({
+export const queueConfigOptions = declareSubslice({
     name: 'queueConfig',
     initialState,
     selectors: {
@@ -18,7 +19,7 @@ export const createQueueConfigSubslice = createSubslice({
     }
 });
 
-export const createQueueConfig = (Subslice: Subslice<typeof createQueueConfigSubslice>) => {
+export const createQueueConfig = (Subslice: Subslice<TState, typeof queueConfigOptions>) => {
     return Subslice.selectors;
 };
 

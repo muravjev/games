@@ -1,8 +1,8 @@
-import type { Fn } from 'utils/typescript';
+import type { Fn } from '@muravjev/utils-typescript';
 
-import { getObjectKeys } from 'utils/typescript';
+import { getObjectKeys } from '@muravjev/utils-typescript';
 
-type Selector<
+export type Selector<
     TSliceName extends string,
     TSubsliceName extends string,
     TSelector extends Fn

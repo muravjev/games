@@ -18,6 +18,7 @@ export default function DrawerSlider({ isOpened, children }: Props) {
 
     const [marginTop, setMarginTop] = useState(isOpened ? '0' : '-1000px');
     const isResizing = useIsWindowResizing();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const windowWidth = useWindowWidth(); //< margingTop may have change on window with change.
 
     useBrowserLayoutEffect(() => {

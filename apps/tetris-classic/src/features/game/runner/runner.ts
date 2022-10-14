@@ -1,9 +1,9 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Dispatch, GetState, Thunk } from 'features/hooks';
+import type { TState, Dispatch, GetState, Thunk } from 'features/hooks';
 
 import { notNull } from 'utils/typescript';
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 
 export enum EStage {
     Init = 'init',
@@ -42,7 +42,7 @@ const initialState: RunnerState = {
     phase: null
 };
 
-export const createRunnerSubslice = createSubslice({
+export const runnerOptions = declareSubslice({
     name: 'runner',
     initialState,
     selectors: {
@@ -53,10 +53,10 @@ export const createRunnerSubslice = createSubslice({
         }
     },
     reducers: {
-        configured(state, action) {
+        configured(state, action: PayloadAction<Partial<RunnerState>>) {
             return { ...state, ...action.payload };
         },
-        started(state, action) {
+        started(state, action: PayloadAction<Partial<RunnerState>>) {
             return { ...state, ...action.payload };
         },
         shiftAdjusted(state, action: PayloadAction<RunnerState['shift']>) {
@@ -92,7 +92,7 @@ export interface IRunnerEvents {
     onPhase: RunnerEvents_OnPhase;
 }
 
-export const createRunner = (Subslice: Subslice<typeof createRunnerSubslice>) => {
+export const createRunner = (Subslice: Subslice<TState, typeof runnerOptions>) => {
     const { select, selectPhase, selectStage } = Subslice.selectors;
     const {
         configured,
@@ -149,7 +149,7 @@ export const createRunner = (Subslice: Subslice<typeof createRunnerSubslice>) =>
     }
 
     const schedulePhase =
-        (id: string, frames: number = 0, payload: any = undefined) =>
+        (id: string, frames = 0, payload: any = undefined) =>
         (dispatch: Dispatch) => {
             clearTimer();
             dispatch(phaseScheduled({ id, frames: frames, payload, start: Date.now() }));

@@ -8,38 +8,35 @@ import type { IGameInfoLines } from 'controls/game/info/lines/Lines';
 import type { IGameInfoLevel } from 'controls/game/info/level/Level';
 import type { IGameInfoNext } from 'controls/game/info/next/Next';
 
-import { createSubslices } from 'utils/subslice/createSubslices';
-import { createBoardConfig, createBoardConfigSubslice } from 'features/game/board/boardConfig';
-import { createQueueConfig, createQueueConfigSubslice } from 'features/game/queue/queueConfig';
-import {
-    createFactorsConfig,
-    createFactorsConfigSubslice
-} from 'features/game/factors/factorsConfig';
+import { createSubslices } from '@muravjev/utils-redux-subslice';
+import { createBoardConfig, boardConfigOptions } from 'features/game/board/boardConfig';
+import { createQueueConfig, queueConfigOptions } from 'features/game/queue/queueConfig';
+import { createFactorsConfig, factorsConfigOptions } from 'features/game/factors/factorsConfig';
 
-import { createBoard, createBoardSubslice } from 'features/game/board/board';
-import { createQueue, createQueueSubslice } from 'features/game/queue/queue';
-import { createFactors, createFactorsSubslice } from 'features/game/factors/factors';
-import { createFigure, createFigureSubslice } from 'features/game/figure/figure';
-import { createRunner, createRunnerSubslice, EStage } from 'features/game/runner/runner';
-import { createSounds, createSoundsSubslice } from 'features/game/sounds/sounds';
+import { createBoard, boardOptions } from 'features/game/board/board';
+import { createQueue, queueOptions } from 'features/game/queue/queue';
+import { createFactors, factorsOptions } from 'features/game/factors/factors';
+import { createFigure, figureOptions } from 'features/game/figure/figure';
+import { createRunner, runnerOptions, EStage } from 'features/game/runner/runner';
+import { createSounds, soundsOptions } from 'features/game/sounds/sounds';
 import { createPhases } from 'features/game/phases/phases';
 import { createActions } from 'features/game/actions/actions';
-import { createPlayProcessor, createPlayProcessorSubslice } from './playProcessor';
+import { createPlayProcessor, playProcessorOptions } from './playProcessor';
 
 const [playSlice, subslices] = createSubslices(
     'play',
-    createBoardConfigSubslice,
-    createQueueConfigSubslice,
-    createFactorsConfigSubslice,
+    boardConfigOptions,
+    queueConfigOptions,
+    factorsConfigOptions,
 
-    createBoardSubslice,
-    createQueueSubslice,
-    createFactorsSubslice,
-    createFigureSubslice,
-    createRunnerSubslice,
-    createSoundsSubslice,
+    boardOptions,
+    queueOptions,
+    factorsOptions,
+    figureOptions,
+    runnerOptions,
+    soundsOptions,
 
-    createPlayProcessorSubslice
+    playProcessorOptions
 );
 
 export default playSlice;

@@ -1,13 +1,13 @@
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Subslice } from 'utils/subslice/createSubslices';
-import type { Thunk } from 'features/hooks';
+import type { TState, Thunk } from 'features/hooks';
 import type { RunnerEvents_OnPhase } from 'features/game/runner/runner';
 import type { IFactors } from 'features/game/factors/factors';
 import type { IPhases } from 'features/game/phases/phases';
 
 import { EPhase } from 'features/game/phases/phases';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 
 const data = {
     board: [
@@ -40,7 +40,7 @@ const initialState = {
     level: 1
 };
 
-export const createPuzzleProcessorSubslice = createSubslice({
+export const puzzleProcessorOptions = declareSubslice({
     name: 'processor',
     initialState,
     selectors: {
@@ -73,7 +73,7 @@ const LINES_PER_LEVEL = 3;
 const DELAY_DECREASE_PER_LEVEL = 5;
 
 export const createPuzzleProcessor = (
-    Subslice: Subslice<typeof createPuzzleProcessorSubslice>,
+    Subslice: Subslice<TState, typeof puzzleProcessorOptions>,
     Phases: IPhases,
     Factors: IFactors
 ) => {

@@ -1,16 +1,16 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Thunk } from 'features/hooks';
+import type { TState, Thunk } from 'features/hooks';
 import type { Figure } from 'features/game/game';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 import { rotateMatrix } from 'utils/matrix';
 
 const initialState: Figure | null = null as unknown as Figure;
 
 const updated = (figure: Figure, action: PayloadAction<Figure>) => action.payload;
 
-export const createFigureSubslice = createSubslice({
+export const figureOptions = declareSubslice({
     name: 'figure',
     initialState,
     selectors: {
@@ -23,7 +23,7 @@ export const createFigureSubslice = createSubslice({
     }
 });
 
-export const createFigure = (Subslice: Subslice<typeof createFigureSubslice>) => {
+export const createFigure = (Subslice: Subslice<TState, typeof figureOptions>) => {
     const { select } = Subslice.selectors;
     const { spawned, moved, rotated } = Subslice.actions;
 

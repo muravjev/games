@@ -64,7 +64,7 @@ export const useSoundsPlayer = (data: Record<ESounds, string>) => {
         const context = createAudioContext();
         if (!context) return;
 
-        var buffer = context.createBuffer(1, 1, 22050);
+        const buffer = context.createBuffer(1, 1, 22050);
         playBuffer(context, buffer);
 
         const buffers = buffersRef.current;

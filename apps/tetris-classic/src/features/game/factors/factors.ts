@@ -1,9 +1,9 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Thunk } from 'features/hooks';
+import type { TState, Thunk } from 'features/hooks';
 import type { IFactorsConfig } from './factorsConfig';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 
 const initialState = {
     soft: false, //     -- whether we are in soft drop
@@ -17,7 +17,7 @@ const initialState = {
 
 type FactorsState = typeof initialState;
 
-export const createFactorsSubslice = createSubslice({
+export const factorsOptions = declareSubslice({
     name: 'factors',
     initialState,
     selectors: {
@@ -48,11 +48,11 @@ export const createFactorsSubslice = createSubslice({
 });
 
 export const createFactors = (
-    Subslice: Subslice<typeof createFactorsSubslice>,
+    Subslice: Subslice<TState, typeof factorsOptions>,
     FactorsConfig: IFactorsConfig
 ) => {
-    const { selectMoveDelay, selectSpawnDelay, selectLockDelay, selectBurnDelay } =
-        Subslice.selectors;
+    // const { selectMoveDelay, selectSpawnDelay, selectLockDelay, selectBurnDelay } =
+    //     Subslice.selectors;
     const { configured, softApplied, spawnApplied, moveDelayChanged } = Subslice.actions;
 
     const configure: () => Thunk = () => (dispatch, getState) => {

@@ -24,7 +24,7 @@ const transpose = <T>(matrix: Matrix<T>) => {
 const reverseRows = <T>(matrix: Matrix<T>) => {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < (matrix.length - 1) / 2; x++) {
-            let o = matrix.length - 1 - x;
+            const o = matrix.length - 1 - x;
             [matrix[x][y], matrix[o][y]] = [matrix[o][y], matrix[x][y]];
         }
     }
