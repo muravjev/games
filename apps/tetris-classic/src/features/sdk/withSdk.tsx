@@ -2,7 +2,7 @@ import type { ComponentType, PropsWithChildren } from 'react';
 import type { FallbackCallbacks } from 'features/fallback/withFallback';
 
 import { createContext, useContext } from 'react';
-import { createDeferred } from 'utils/deferred';
+import { createDeferred } from '@muravjev/utils-deferred';
 
 import dynamic from 'next/dynamic';
 

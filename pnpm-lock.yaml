@@ -43,6 +43,7 @@ importers:
       '@muravjev/configs-eslint-ts-next': workspace:*
       '@muravjev/configs-ts': workspace:*
       '@muravjev/configs-ts-next': workspace:*
+      '@muravjev/utils-deferred': workspace:*
       '@muravjev/utils-redux-subslice': workspace:*
       '@reduxjs/toolkit': ^1.8.6
       '@svgr/webpack': ^6.4.0
@@ -74,6 +75,7 @@ importers:
       '@mui/icons-material': 5.10.9_6usjrp3ypnzobhq35dcwvjrt3m
       '@mui/material': 5.10.9_ikcgkdnp4bn3rgptamntbhbo7e
       '@muravjev/configs-ts': link:../../packages/configs/ts
+      '@muravjev/utils-deferred': link:../../packages/utils/deferred
       '@muravjev/utils-redux-subslice': link:../../packages/utils/redux-subslice
       '@reduxjs/toolkit': 1.8.6_kuo2ie247izvzll3jejufdtq3q
       clsx: 1.2.1
@@ -186,6 +188,16 @@ importers:
       typescript: 4.8.4
     dependencies:
       '@muravjev/configs-ts': link:../ts
+      '@types/node': 18.8.3
+      typescript: 4.8.4
+
+  packages/utils/deferred:
+    specifiers:
+      '@muravjev/configs-ts': workspace:^
+      '@types/node': 18.8.3
+      typescript: 4.8.4
+    devDependencies:
+      '@muravjev/configs-ts': link:../../configs/ts
       '@types/node': 18.8.3
       typescript: 4.8.4
 

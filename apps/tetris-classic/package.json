@@ -21,6 +21,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.8",
     "@muravjev/configs-ts": "workspace:*",
+    "@muravjev/utils-deferred": "workspace:*",
     "@muravjev/utils-redux-subslice": "workspace:*",
     "@reduxjs/toolkit": "^1.8.6",
     "clsx": "^1.2.1",

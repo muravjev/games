@@ -1,7 +1,7 @@
 import type { ComponentType, PropsWithChildren } from 'react';
 
 import { useEffect, useState } from 'react';
-import { createDeferred } from 'utils/deferred';
+import { createDeferred } from '@muravjev/utils-deferred';
 
 function withFallbackThunk<T extends PropsWithChildren>(
     Fallback: ComponentType<T>,
