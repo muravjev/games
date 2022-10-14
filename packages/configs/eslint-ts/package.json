@@ -1,6 +1,6 @@
 {
   "name": "@muravjev/configs-eslint-ts",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Shared eslint config for monorepo (ts) and lib (ts) packages",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
