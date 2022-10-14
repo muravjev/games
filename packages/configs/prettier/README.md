@@ -1,4 +1,4 @@
-# Shared monorepo prettier config
+# Shared prettier config
 
 This is part of a [@muravjev/games](https://github.com/muravjev/games) monorepo.
 
