@@ -1,1 +1,1 @@
-module.exports = require('@muravjev/eslint-config-monorepo');
+module.exports = require('@muravjev/configs-eslint-ts');

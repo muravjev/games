@@ -1,5 +1,5 @@
 {
-  "extends": "@muravjev/ts-config-app-next",
+  "extends": "@muravjev/configs-ts-next",
   "compilerOptions": {
     "baseUrl": "src"
   },

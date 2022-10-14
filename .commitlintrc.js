@@ -1,1 +1,1 @@
-module.exports = require('@muravjev/commitlint-config-monorepo');
+module.exports = require('@muravjev/configs-commitlint');

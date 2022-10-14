@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- Update dependencies
+- Move configs to packages
 
 ## 0.1.0
 

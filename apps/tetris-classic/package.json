@@ -3,13 +3,13 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "clean": "rimraf .next tsconfig.tsbuildinfo .coverage",
+    "clean": "rimraf .next .coverage .export tsconfig.tsbuildinfo",
     "dev": "next dev",
     "dev-ssl": "next dev -p 3001 | local-ssl-proxy --key .ssl/localhost.key --cert .ssl/localhost.crt --source 3000 --target 3001",
     "build": "next build",
     "test": "jest",
     "test:coverage": "pnpm run test --coverage",
-    "export": "next build && next export -o .export && winrar-zip-build.bat",
+    "export": "next build && next export -o .export && winrar-zip-build.bat tetris-classic",
     "start": "next start",
     "lint": "next lint",
     "sass": "sass src:css --load-path src/styles --no-source-map -w"
@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@indigotree/dart-sass-json-importer": "^0.2.0",
-    "@muravjev/eslint-config-app-next": "workspace:0.2.0",
-    "@muravjev/ts-config-app-next": "workspace:1.0.0",
+    "@muravjev/configs-eslint-ts-next": "workspace:*",
+    "@muravjev/configs-ts-next": "workspace:*",
     "@svgr/webpack": "^6.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
