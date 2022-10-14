@@ -6,9 +6,5 @@
   "eslint.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.debug": false,
-  "eslint.workingDirectories": [
-    { "pattern": "./apps/*/" },
-    { "pattern": "./configs/*/*" },
-    { "pattern": "./packages/*/" }
-  ]
+  "eslint.workingDirectories": [{ "pattern": "./apps/*/" }, { "pattern": "./packages/*/*/" }]
 }

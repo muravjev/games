@@ -1,12 +1,12 @@
-# Configure monorepo
+# Configuration
 
-Common config for monorepos with `pnpm` + `eslint` + `prettier` + `husky` + `lintstaged` + `commitlint` + `changesets` etc.
+Common configs for projects with `pnpm` + `eslint` + `prettier` + `remark` + `husky` + `lintstaged` + `commitlint` + `changesets` + `typescript` etc.
 
-The purpose of these config is to define a common set of strict rules to validate the coding standards in monorepo.
+The purpose of these configs is to define a common set of strict rules to validate the coding standards.
 
-# Setup
+## Contents
 
-- [Setup Monorepo](#setup-monorepo)
+- [Setup monorepo](#setup-monorepo)
   - [Git](#git)
   - [Package](#package)
   - [Scripts](#scripts)
@@ -14,14 +14,18 @@ The purpose of these config is to define a common set of strict rules to validat
 - [Configure monorepo](#configure-monorepo)
   - [Prettier](#prettier)
   - [ESLint](#eslint)
+  - [Remark](#remark)
   - [Husky](#husky)
   - [LintStaged](#lintstaged)
   - [CommitLint](#commitlint)
   - [Changesets](#changesets)
+- [Configure app (nextjs + ts)](#configure-app-nextjs--ts)
+  - [ESLint (nextjs + ts)](#eslint-nextjs--ts)
+  - [Typescript (nextjs + ts)](#typescript-nextjs--ts)
 
-# Setup monorepo
+## Setup monorepo
 
-## Git
+### Git
 
 - Create git repo
 
@@ -45,7 +49,7 @@ The purpose of these config is to define a common set of strict rules to validat
   **/pnpm-lock.yaml -diff
   ```
 
-## Package
+### Package
 
 - Create package file `./package.json`
 
@@ -53,7 +57,7 @@ The purpose of these config is to define a common set of strict rules to validat
   pnpm init
   ```
 
-## Scripts
+### Scripts
 
 - Add global `rimraf`
 
@@ -74,7 +78,7 @@ The purpose of these config is to define a common set of strict rules to validat
   }
   ```
 
-## Workspace
+### Workspace
 
 - Add pnpm workspace file `./pnpm-workspace.yaml`
 
@@ -86,14 +90,14 @@ The purpose of these config is to define a common set of strict rules to validat
     - 'packages/*'
   ```
 
-# Configure monorepo
+## Configure monorepo
 
-## Prettier
+### Prettier
 
-- Add reference to `@muravjev/prettier-config-monorepo` and its peer dependencies
+- Add reference to `@muravjev/configs-prettier` and its peer dependencies
 
   ```sh
-  pnpx install-peerdeps @muravjev/prettier-config-monorepo --pnpm --extra-args "-w"
+  pnpx install-peerdeps @muravjev/configs-prettier --pnpm --extra-args "-w"
   ```
 
 - Add prettier configuration file `./.prettierrc.js`
@@ -101,7 +105,7 @@ The purpose of these config is to define a common set of strict rules to validat
   ```js
   // .prettierrc.js
 
-  module.exports = require('@muravjev/prettier-config-monorepo');
+  module.exports = require('@muravjev/configs-prettier');
   ```
 
 - Add prettier ignore patterns file `./.prettierignore`
@@ -127,7 +131,7 @@ The purpose of these config is to define a common set of strict rules to validat
   }
   ```
 
-- If you using vs code `prettier` plugin, configure it, by adding these settings to `./.vscode/settings.json`
+- Configure vs code `prettier` plugin, by adding these settings to `./.vscode/settings.json`
 
   ```json5
   // settings.json
@@ -147,12 +151,12 @@ The purpose of these config is to define a common set of strict rules to validat
   pnpm format:fix .
   ```
 
-## ESLint
+### ESLint
 
-- Add reference to `@muravjev/eslint-config-monorepo` and its peer dependencies
+- Add reference to `@muravjev/configs-eslint-ts` and its peer dependencies
 
   ```sh
-  pnpx install-peerdeps @muravjev/eslint-config-monorepo --pnpm --extra-args "-w"
+  pnpx install-peerdeps @muravjev/configs-eslint-ts --pnpm --extra-args "-w"
   ```
 
 - Add eslint configuration file `./.eslintrc.js`
@@ -160,7 +164,7 @@ The purpose of these config is to define a common set of strict rules to validat
   ```js
   // .eslintrc.js
 
-  module.exports = require('@muravjev/eslint-config-monorepo');
+  module.exports = require('@muravjev/configs-eslint-ts');
   ```
 
 - Add eslint ignore patterns file `./.eslintignore`
@@ -184,7 +188,7 @@ The purpose of these config is to define a common set of strict rules to validat
   }
   ```
 
-- If you using vs code `eslint` plugin, configure it, by adding these settings to `./.vscode/settings.json`
+- Configure vs code `eslint` plugin, by adding these settings to `./.vscode/settings.json`
 
   ```json5
   // settings.json
@@ -206,7 +210,66 @@ The purpose of these config is to define a common set of strict rules to validat
   pnpm lint:fix .
   ```
 
-## Husky
+### Remark
+
+- Add reference to `@muravjev/configs-remark` and its peer dependencies
+
+  ```sh
+  pnpx install-peerdeps @muravjev/configs-remark --pnpm --extra-args "-w"
+  ```
+
+- Add prettier configuration file `./.remarkrc.mjs`
+
+  ```js
+  // .remarkrc.mjs
+
+  import config from '@muravjev/configs-remark';
+  export default config;
+  ```
+
+- Add prettier ignore patterns file `./.remarkignore`
+
+  ```sh
+  # .remarkignore
+
+  node_modules/
+  ...
+  ```
+
+- Add remark scripts to `./package.json`
+
+  ```json5
+  // package.json
+
+  "scripts": {
+    ...
+    "remark": "remark",
+    "remark:fix": "pnpm remark . --output"
+    ...
+  }
+  ```
+
+- Configure vs code `prettier` plugin, by adding these settings to `./.vscode/settings.json`
+
+  ```json5
+  // settings.json
+
+  {
+    ...
+    "files.eol": "\n",
+    "prettier.requireConfig": true,
+    ...
+  }
+  ```
+
+- Use `prettier`
+
+  ```sh
+  pnpm format:check .
+  pnpm format:fix .
+  ```
+
+### Husky
 
 - Add reference to `husky`
 
@@ -226,7 +289,7 @@ The purpose of these config is to define a common set of strict rules to validat
   }
   ```
 
-## LintStaged
+### LintStaged
 
 - Add reference to `lint-staged`
 
@@ -250,18 +313,18 @@ The purpose of these config is to define a common set of strict rules to validat
   // package.json
 
   "lint-staged": {
-    "*.{js,json}": "pnpm format:fix",
-    "*.js": "pnpm lint:fix"
+    "*.{js,ts,tsx,md,json,yaml}": "pnpm format:fix",
+    "*.{js,ts,tsx}": "pnpm lint:fix"
     ...
   }
   ```
 
-## CommitLint
+### CommitLint
 
-- Add reference to `@muravjev/commitlint-config-monorepo` and its peer dependencies
+- Add reference to `@muravjev/configs-commitlint` and its peer dependencies
 
   ```sh
-  pnpx install-peerdeps @muravjev/commitlint-config-monorepo --pnpm --extra-args "-w"
+  pnpx install-peerdeps @muravjev/configs-commitlint --pnpm --extra-args "-w"
   ```
 
 - Add commitlint configuration file `./.commitlintrc.js`
@@ -269,7 +332,7 @@ The purpose of these config is to define a common set of strict rules to validat
   ```js
   // .commitlintrc.js
 
-  module.exports = require('@muravjev/commitlint-config-monorepo');
+  module.exports = require('@muravjev/configs-commitlint');
   ```
 
 - Add commitlint script to `./package.json`
@@ -292,7 +355,7 @@ The purpose of these config is to define a common set of strict rules to validat
   pnpx husky add .husky/commit-msg 'pnpm commitlint --edit $1'
   ```
 
-## Changesets
+### Changesets
 
 - Add reference to `@changesets/cli`
 
@@ -304,7 +367,6 @@ The purpose of these config is to define a common set of strict rules to validat
 
   ```sh
   pnpm changeset init
-
   ```
 
 - Use changesets
@@ -335,4 +397,44 @@ The purpose of these config is to define a common set of strict rules to validat
   # manually publish package
   pnpm publish --access=public
 
+  ```
+
+## Configure app (nextjs + ts)
+
+### ESLint (nextjs + ts)
+
+- Add reference to `@muravjev/configs-eslint-ts-next` and its peer dependencies
+
+  ```sh
+  pnpx install-peerdeps @muravjev/configs-eslint-ts-next --pnpm --extra-args "-D"
+  ```
+
+- Add eslint configuration file `./.eslintrc.js`
+
+  ```js
+  // .eslintrc.js
+
+  module.exports = require('@muravjev/configs-eslint-ts-next');
+  ```
+
+### Typescript (nextjs + ts)
+
+- Add reference to `@muravjev/configs-ts-next` and its peer dependencies
+
+  ```sh
+  pnpx install-peerdeps @muravjev/configs-ts-next --pnpm --extra-args "-D"
+  ```
+
+- Add typescript configuration file `./tsconfig.json`
+
+  ```json
+  // tsconfig.json
+
+  {
+    "extends": "@muravjev/configs-ts-next",
+    "compilerOptions": {
+      "baseUrl": "src"
+    },
+    "include": ["next-env.d.ts", "src"]
+  }
   ```

@@ -14,7 +14,7 @@ const remarkConfig = {
         remarkPresetLintConsistent, // Check that markdown is consistent.
         remarkPresetLintRecommended, // Few recommended rules.
         [remarkLintListItemIndent, 'space'],
-        [remarkToc, { heading: 'contents' }], // Generate a table of contents in `## Contents`
+        [remarkToc, { heading: 'contents', tight: true }], // Generate a table of contents in `## Contents`
         remarkPrettier
     ]
 };
