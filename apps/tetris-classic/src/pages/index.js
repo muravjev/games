@@ -1,19 +1,19 @@
-// export { default } from 'features/locale/LocaleRedirect';
+export { default } from 'features/locale/LocaleRedirect';
 
-import { makeStaticProps } from 'features/locale/localeStatic';
+// import { makeStaticProps } from 'features/locale/localeStatic';
 
-import Page from 'controls/page/Page';
-import Puzzle from 'components/puzzle/Puzzle';
+// import Page from 'controls/page/Page';
+// import Puzzle from 'components/puzzle/Puzzle';
 
-import { client } from 'utils/utils';
-console.log(client, 'compile puzzle');
+// import { client } from 'utils/utils';
+// console.log(client, 'compile puzzle');
 
-export const getStaticProps = makeStaticProps(['common', 'page-puzzle', 'game']);
+// export const getStaticProps = makeStaticProps(['common', 'page-puzzle', 'game']);
 
-export default function PlayPage() {
-    return (
-        <Page page="page-puzzle">
-            <Puzzle />
-        </Page>
-    );
-}
+// export default function PlayPage() {
+//     return (
+//         <Page page="page-puzzle">
+//             <Puzzle />
+//         </Page>
+//     );
+// }

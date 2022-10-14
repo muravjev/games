@@ -9,7 +9,7 @@ import Board from 'controls/game/board/Board';
 // import { MobileControls } from './controls/MobileControls';
 
 import C from 'config/layouts.json';
-import S from './MobileThinLayout.module.scss';
+// import S from './MobileThinLayout.module.scss';
 
 const calcCellWidth: CalcCellWidth = calcs => {
     const { layoutWidth, layoutHeight, boardWidth, boardHeight } = calcs;

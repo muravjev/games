@@ -10,7 +10,7 @@ const sdk = {
     getPreferredLocale: () => Promise.resolve('ru')
 };
 
-export default function VkSdk({ resolve, reject }: SdkProps) {
+export default function VkSdk({ resolve }: SdkProps) {
     setTimeout(() => {
         resolve(sdk);
     }, 3000);

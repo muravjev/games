@@ -10,7 +10,7 @@ export function getFigureDropDistance(board: Matrix, figure: Figure): number {
     for (let x = 0; x < figureWidth; x++) {
         for (let y = figureHeight - 1; y >= 0; y--) {
             if (figure.figure[y][x] === 0) continue;
-            let boardX = figure.position.x + x;
+            const boardX = figure.position.x + x;
             let boardY = figure.position.y + y;
 
             let distance = 0;

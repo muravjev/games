@@ -1,12 +1,12 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Select, Thunk } from 'features/hooks';
+import type { TState, Select, Thunk } from 'features/hooks';
 import type { IBoardConfig } from '../board/boardConfig';
 import type { IQueueConfig } from './queueConfig';
 import type { Matrix } from 'utils/matrix';
 import type { Figure } from 'features/game/game';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 
 import { prepareQueue } from './queueUtils';
 import { createFigures } from './utils/createFigures';
@@ -27,7 +27,7 @@ const initialState: QueueState = {
     pending: []
 };
 
-export const createQueueSubslice = createSubslice({
+export const queueOptions = declareSubslice({
     name: 'queue',
     initialState,
     selectors: {
@@ -47,7 +47,7 @@ export const createQueueSubslice = createSubslice({
 });
 
 export const createQueue = (
-    Subslice: Subslice<typeof createQueueSubslice>,
+    Subslice: Subslice<TState, typeof queueOptions>,
     BoardConfig: IBoardConfig,
     QueueConfig: IQueueConfig
 ) => {

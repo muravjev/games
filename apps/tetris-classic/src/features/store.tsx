@@ -11,7 +11,7 @@ import userSlice from 'features/user/userSlice';
 import puzzleSlice from 'components/puzzle/puzzleSlice';
 import playSlice from 'components/play/playSlice';
 
-const slices = [pageSlice, localeSlice, themeSlice, userSlice, puzzleSlice, playSlice];
+// const slices = [pageSlice, localeSlice, themeSlice, userSlice, puzzleSlice, playSlice];
 // const reducer = slices.reduce((p, s) => ((p[s.name] = s.reducer), p), {} as Record<string, any>);
 
 const reducer = {

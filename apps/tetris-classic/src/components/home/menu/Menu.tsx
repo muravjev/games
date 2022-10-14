@@ -4,7 +4,7 @@ import { MenuButton } from './button/MenuButton';
 import clsx from 'clsx';
 import S from './Menu.module.scss';
 
-let isFirstMount: boolean = true;
+let isFirstMount = true;
 
 export default function Menu() {
     useEffect(() => {

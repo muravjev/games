@@ -1,11 +1,12 @@
-import type { Subslice } from 'utils/subslice/createSubslices';
+import type { Subslice } from '@muravjev/utils-redux-subslice';
+import type { TState } from 'features/hooks';
 
-import { createSubslice } from 'utils/subslice/createSubslice';
+import { declareSubslice } from '@muravjev/utils-redux-subslice';
 import { gameConfig } from 'config/game/game';
 
 const initialState = gameConfig.boardSize;
 
-export const createBoardConfigSubslice = createSubslice({
+export const boardConfigOptions = declareSubslice({
     name: 'boardConfig',
     initialState,
     selectors: {
@@ -13,7 +14,7 @@ export const createBoardConfigSubslice = createSubslice({
     }
 });
 
-export function createBoardConfig(Subslice: Subslice<typeof createBoardConfigSubslice>) {
+export function createBoardConfig(Subslice: Subslice<TState, typeof boardConfigOptions>) {
     return Subslice.selectors;
 }
 

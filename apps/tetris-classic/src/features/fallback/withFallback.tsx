@@ -5,7 +5,7 @@ import { createDeferred } from 'utils/deferred';
 
 function withFallbackThunk<T extends PropsWithChildren>(
     Fallback: ComponentType<T>,
-    promises: Promise<any>[]
+    promises: Promise<unknown>[]
 ) {
     return function withFallback(Component: ComponentType<T>) {
         return function FallbackHoc(props: T) {
@@ -22,7 +22,7 @@ function withFallbackThunk<T extends PropsWithChildren>(
     };
 }
 
-function log(result: 'resolved' | 'rejected', value: any, ...args: any[]) {
+function log(result: 'resolved' | 'rejected', value: unknown, ...args: unknown[]) {
     console.log(
         '  .. %s %c%s%c',
         value,
@@ -34,15 +34,15 @@ function log(result: 'resolved' | 'rejected', value: any, ...args: any[]) {
 }
 
 export type FallbackCallbacks = {
-    resolve: (name: string, ...args: any[]) => void;
-    reject: (name: string, error: unknown, ...args: any[]) => void;
+    resolve: (name: string, ...args: unknown[]) => void;
+    reject: (name: string, error: unknown, ...args: unknown[]) => void;
 };
 
 type Func<T> = (Component: ComponentType<T>, callbacks: FallbackCallbacks) => ComponentType<T>;
 
 export function withFallback<T extends PropsWithChildren>(...fns: Func<T>[]) {
     return function (Component: ComponentType<T>, Fallback: ComponentType<T>): ComponentType<T> {
-        const promises: Promise<any>[] = [];
+        const promises: Promise<unknown>[] = [];
         const compose = (component: ComponentType<T>, func: Func<T>) => {
             const { promise, resolve, reject } = createDeferred<string>();
             promises.push(promise);

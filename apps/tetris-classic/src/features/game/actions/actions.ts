@@ -11,7 +11,7 @@ import { ESounds } from 'config/sounds';
 
 type Phase = {
     id: string;
-    payload?: any;
+    payload?: unknown;
 };
 
 export const createActions = (

@@ -16,6 +16,6 @@ const sdk = {
     getPreferredLocale: () => Promise.resolve('ru')
 };
 
-export default function SelfSdk({ resolve, reject }: SdkProps) {
+export default function SelfSdk({ resolve }: SdkProps) {
     resolve(sdk);
 }

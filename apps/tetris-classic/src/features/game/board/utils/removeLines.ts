@@ -8,6 +8,6 @@ export function removeLines(merge: Matrix, lines: number[]): Matrix {
     lines.every(y => burned.splice(y, 1));
     const boardWidth = getMatrixWidth(merge);
     const emptyLine = createArray(boardWidth, 0);
-    lines.every(_ => burned.unshift(emptyLine.slice()));
+    lines.every(() => burned.unshift(emptyLine.slice()));
     return burned;
 }

@@ -1,11 +1,11 @@
 import type { ActionCreatorWithoutPayload, ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Fn } from 'utils/typescript';
+import type { Fn } from '@muravjev/utils-typescript';
 
-import { getObjectKeys } from 'utils/typescript';
+import { getObjectKeys } from '@muravjev/utils-typescript';
 import { createAction } from '@reduxjs/toolkit';
 
-type Action<TReducer> = TReducer extends (state: any) => any
+export type Action<TReducer> = TReducer extends (state: any) => any
     ? ActionCreatorWithoutPayload
     : TReducer extends (state: any, action: PayloadAction<infer T>) => any
     ? ActionCreatorWithPayload<T>
