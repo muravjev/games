@@ -1,6 +1,7 @@
 {
   "name": "@muravjev/utils-deferred",
   "version": "0.0.0",
+  "private": true,
   "license": "MIT",
   "author": "Muravjev Sergey",
   "description": "Shared utils - deferred",

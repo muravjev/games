@@ -14,7 +14,7 @@
     "typescript": "4.8.4"
   },
   "dependencies": {
-    "@muravjev/utils-deferred": "workspace:^0.0.0",
+    "@muravjev/utils-deferred": "workspace:*",
     "react": "18.2.0"
   }
 }

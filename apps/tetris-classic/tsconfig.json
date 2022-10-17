@@ -4,5 +4,5 @@
     "rootDir": "src",
     "baseUrl": "src"
   },
-  "include": ["next-env.d.ts", "src"]
+  "include": ["src", "next-env.d.ts"]
 }

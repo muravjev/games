@@ -141,16 +141,15 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-plugin-log-filenames: ^1.0.6
       eslint-plugin-prettier: ^4.2.1
-      eslint-plugin-react: ^7.31.10
+    dependencies:
+      eslint: 8.25.0
     devDependencies:
       '@typescript-eslint/eslint-plugin': 5.40.0_25sstg4uu2sk4pm7xcyzuov7xq
       '@typescript-eslint/parser': 5.40.0_z4bbprzjrhnsfa24uvmcbu7f5q
-      eslint: 8.25.0
       eslint-config-next: 12.3.1_z4bbprzjrhnsfa24uvmcbu7f5q
       eslint-config-prettier: 8.5.0_eslint@8.25.0
       eslint-plugin-log-filenames: 1.0.6_eslint@8.25.0
       eslint-plugin-prettier: 4.2.1_hvbqyfstm4urdpm6ffpwfka4e4
-      eslint-plugin-react: 7.31.10_eslint@8.25.0
 
   packages/configs/eslint-ts-react:
     specifiers:
@@ -229,7 +228,7 @@ importers:
     specifiers:
       '@muravjev/configs-eslint-ts-react': workspace:*
       '@muravjev/configs-ts-react': workspace:*
-      '@muravjev/utils-deferred': workspace:^0.0.0
+      '@muravjev/utils-deferred': workspace:*
       '@types/node': ^18.11.0
       '@types/react': ^18.0.21
       react: 18.2.0
