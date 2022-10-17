@@ -1,10 +1,10 @@
-import type { ComponentType, PropsWithChildren } from 'react';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-export function withError<T extends PropsWithChildren>(
+export function withError<T extends object>(
     Component: ComponentType<T>,
     { resolve }: FallbackCallbacks
 ) {

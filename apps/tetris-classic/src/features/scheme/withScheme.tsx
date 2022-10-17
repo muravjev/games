@@ -1,14 +1,14 @@
-import type { ComponentType, PropsWithChildren } from 'react';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { createContext, useContext, useEffect } from 'react';
 import { useSdk } from 'features/sdk/withSdk';
-import { createDeferred } from 'utils/deferred';
+import { createDeferred } from '@muravjev/utils-deferred';
 
 const SchemeContext = createContext<Promise<string> | null>(null);
 const SchemePromise = createDeferred<string>();
 
-export function withScheme<T extends PropsWithChildren>(
+export function withScheme<T extends object>(
     Component: ComponentType<T>,
     { resolve, reject }: FallbackCallbacks
 ) {

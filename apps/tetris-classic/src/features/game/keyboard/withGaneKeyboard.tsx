@@ -1,7 +1,7 @@
 import type { ComponentType, MutableRefObject, PropsWithChildren } from 'react';
 import type { Thunk } from 'features/hooks';
 import type { IGameActions } from 'features/game/game';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { useEffect, useRef } from 'react';
 import { useAppDispatch } from 'features/hooks';

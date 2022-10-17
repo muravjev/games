@@ -1,8 +1,8 @@
-import type { ComponentType, PropsWithChildren } from 'react';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { createContext, useContext } from 'react';
-import { createDeferred } from 'utils/deferred';
+import { createDeferred } from '@muravjev/utils-deferred';
 
 import dynamic from 'next/dynamic';
 
@@ -39,7 +39,7 @@ const Sdk: ComponentType<SdkProps> = dynamic(() => import(process.env.NEXT_PUBLI
     ssr: false
 });
 
-export function withSdk<T extends PropsWithChildren>(
+export function withSdk<T extends object>(
     Component: ComponentType<T>,
     { resolve, reject }: FallbackCallbacks
 ) {

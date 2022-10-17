@@ -1,5 +1,5 @@
-import type { ComponentType, PropsWithChildren } from 'react';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 import type { ISoundsPlayer } from './useSoundsPlayer';
 
 import { createContext, useContext, useEffect } from 'react';
@@ -9,7 +9,7 @@ import { soundsConfig } from 'config/sounds';
 
 const SoundsContext = createContext<ISoundsPlayer | null>(null);
 
-export function withSounds<T extends PropsWithChildren>(
+export function withSounds<T extends object>(
     Component: ComponentType<T>,
     { resolve }: FallbackCallbacks
 ) {

@@ -19,9 +19,12 @@ The purpose of these configs is to define a common set of strict rules to valida
   - [LintStaged](#lintstaged)
   - [CommitLint](#commitlint)
   - [Changesets](#changesets)
-- [Configure app (nextjs + ts)](#configure-app-nextjs--ts)
-  - [ESLint (nextjs + ts)](#eslint-nextjs--ts)
-  - [Typescript (nextjs + ts)](#typescript-nextjs--ts)
+- [Configure app (ts + next)](#configure-app-ts--next)
+  - [ESLint (ts + next)](#eslint-ts--next)
+  - [Typescript (ts + next)](#typescript-ts--next)
+- [Configure lib (ts + react)](#configure-lib-ts--react)
+  - [ESLint (ts + react)](#eslint-ts--react)
+  - [Typescript (ts + react)](#typescript-ts--react)
 
 ## Setup monorepo
 
@@ -399,9 +402,9 @@ The purpose of these configs is to define a common set of strict rules to valida
 
   ```
 
-## Configure app (nextjs + ts)
+## Configure app (ts + next)
 
-### ESLint (nextjs + ts)
+### ESLint (ts + next)
 
 - Add reference to `@muravjev/configs-eslint-ts-next` and its peer dependencies
 
@@ -417,7 +420,7 @@ The purpose of these configs is to define a common set of strict rules to valida
   module.exports = require('@muravjev/configs-eslint-ts-next');
   ```
 
-### Typescript (nextjs + ts)
+### Typescript (ts + next)
 
 - Add reference to `@muravjev/configs-ts-next` and its peer dependencies
 
@@ -433,8 +436,50 @@ The purpose of these configs is to define a common set of strict rules to valida
   {
     "extends": "@muravjev/configs-ts-next",
     "compilerOptions": {
-      "baseUrl": "src"
+      "baseUrl": "src",
+      "rootDir": "src"
     },
     "include": ["next-env.d.ts", "src"]
+  }
+  ```
+
+## Configure lib (ts + react)
+
+### ESLint (ts + react)
+
+- Add reference to `@muravjev/configs-eslint-ts-react` and its peer dependencies
+
+  ```sh
+  pnpx install-peerdeps @muravjev/configs-eslint-ts-react --pnpm --extra-args "-D"
+  ```
+
+- Add eslint configuration file `./.eslintrc.js`
+
+  ```js
+  // .eslintrc.js
+
+  module.exports = require('@muravjev/configs-eslint-ts-react');
+  ```
+
+### Typescript (ts + react)
+
+- Add reference to `@muravjev/configs-ts-react` and its peer dependencies
+
+  ```sh
+  pnpx install-peerdeps @muravjev/configs-ts-react --pnpm --extra-args "-D"
+  ```
+
+- Add typescript configuration file `./tsconfig.json`
+
+  ```json
+  // tsconfig.json
+
+  {
+    "extends": "@muravjev/configs-ts-react",
+    "compilerOptions": {
+      "baseUrl": "src",
+      "rootDir": "src"
+    },
+    "include": ["src"]
   }
   ```

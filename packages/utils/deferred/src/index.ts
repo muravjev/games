@@ -1,14 +1,14 @@
-import { notNull } from './typescript';
-
 export type Deferred<T> = {
     resolve: (value: T) => void;
     reject: (reason?: unknown) => void;
     promise: Promise<T>;
 };
 
+const noop = () => undefined;
+
 export function createDeferred<T>(): Deferred<T> {
-    let resolve: ((value: T) => void) | null = null;
-    let reject: ((reason?: unknown) => void) | null = null;
+    let resolve: (value: T) => void = noop;
+    let reject: (reason?: unknown) => void = noop;
     const promise = new Promise<T>((_resolve, _reject) => {
         resolve = _resolve;
         reject = _reject;
@@ -16,7 +16,7 @@ export function createDeferred<T>(): Deferred<T> {
 
     return {
         promise,
-        resolve: notNull(resolve!, 'resolve'),
-        reject: notNull(reject!, 'reject')
+        resolve,
+        reject
     };
 }

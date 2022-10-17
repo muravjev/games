@@ -4,7 +4,7 @@ import type { IGameActions } from 'features/game/game';
 import { useEffect } from 'react';
 import { useAppDispatch } from 'features/hooks';
 
-import { withFallback } from 'features/fallback/withFallback';
+import { withFallback } from '@muravjev/features-fallback';
 import { withGameSoundsThunk } from 'features/game/sounds/withGameSounds';
 import { withGameKeyboardThunk } from 'features/game/keyboard/withGaneKeyboard';
 
