@@ -44,6 +44,7 @@ importers:
       '@muravjev/configs-ts': workspace:*
       '@muravjev/configs-ts-next': workspace:*
       '@muravjev/features-fallback': workspace:*
+      '@muravjev/utils-core': workspace:^0.0.0
       '@muravjev/utils-deferred': workspace:*
       '@muravjev/utils-redux-subslice': workspace:*
       '@reduxjs/toolkit': ^1.8.6
@@ -77,6 +78,7 @@ importers:
       '@mui/material': 5.10.9_ikcgkdnp4bn3rgptamntbhbo7e
       '@muravjev/configs-ts': link:../../packages/configs/ts
       '@muravjev/features-fallback': link:../../packages/features/fallback
+      '@muravjev/utils-core': link:../../packages/utils/core
       '@muravjev/utils-deferred': link:../../packages/utils/deferred
       '@muravjev/utils-redux-subslice': link:../../packages/utils/redux-subslice
       '@reduxjs/toolkit': 1.8.6_kuo2ie247izvzll3jejufdtq3q
@@ -241,6 +243,16 @@ importers:
       '@muravjev/configs-ts-react': link:../../configs/ts-react
       '@types/node': 18.11.0
       '@types/react': 18.0.21
+      typescript: 4.8.4
+
+  packages/utils/core:
+    specifiers:
+      '@muravjev/configs-ts': workspace:^
+      '@types/node': 18.8.3
+      typescript: 4.8.4
+    devDependencies:
+      '@muravjev/configs-ts': link:../../configs/ts
+      '@types/node': 18.8.3
       typescript: 4.8.4
 
   packages/utils/deferred:

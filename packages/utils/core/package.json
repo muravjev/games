@@ -1,0 +1,14 @@
+{
+  "name": "@muravjev/utils-core",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Muravjev Sergey",
+  "description": "Shared utils - core",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@muravjev/configs-ts": "workspace:^",
+    "@types/node": "18.8.3",
+    "typescript": "4.8.4"
+  }
+}

@@ -6,7 +6,7 @@ import Error from 'components/error/Error';
 const getStaticProps = makeStaticProps(['common', 'page-500', 'error-500']);
 export { getStaticPaths, getStaticProps };
 
-import { client } from 'utils/utils';
+import { client } from '@muravjev/utils-core';
 console.log(client, 'compile 500');
 
 export default function Error500Page() {

@@ -22,6 +22,7 @@
     "@mui/material": "^5.10.8",
     "@muravjev/configs-ts": "workspace:*",
     "@muravjev/features-fallback": "workspace:*",
+    "@muravjev/utils-core": "workspace:^0.0.0",
     "@muravjev/utils-deferred": "workspace:*",
     "@muravjev/utils-redux-subslice": "workspace:*",
     "@reduxjs/toolkit": "^1.8.6",

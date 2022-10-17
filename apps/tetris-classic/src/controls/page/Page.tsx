@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
 import { useTranslation } from 'next-i18next';
-import { isServer } from 'utils/utils';
+import { isServer } from '@muravjev/utils-core';
 
 import Head from 'next/head';
 import Fallback from 'controls/page/fallback/Fallback';
