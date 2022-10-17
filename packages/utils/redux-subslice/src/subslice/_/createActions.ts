@@ -1,8 +1,8 @@
 import type { ActionCreatorWithoutPayload, ActionCreatorWithPayload } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Fn } from '@muravjev/utils-typescript';
+import type { Fn } from '@muravjev/utils-core-ts';
 
-import { getObjectKeys } from '@muravjev/utils-typescript';
+import { getObjectKeys } from '@muravjev/utils-core-ts';
 import { createAction } from '@reduxjs/toolkit';
 
 export type Action<TReducer> = TReducer extends (state: any) => any

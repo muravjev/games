@@ -1,5 +1,5 @@
 import type { Slice } from '@reduxjs/toolkit';
-import type { Fn } from '@muravjev/utils-typescript';
+import type { Fn } from '@muravjev/utils-core-ts';
 
 import { createSlice } from '@reduxjs/toolkit';
 import { createReducers } from './_/createReducers';

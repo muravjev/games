@@ -1,4 +1,4 @@
-# @muravjev/utils-typescript
+# @muravjev/utils-core-ts
 
 ## 0.1.1
 
