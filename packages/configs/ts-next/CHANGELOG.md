@@ -1,12 +1,15 @@
 # @muravjev/configs-ts-next
 
+## 0.1.1
+
+### Patch Changes
+
+- Update docs and versions
+- Updated dependencies
+  - @muravjev/configs-ts@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
 
-- Move configs to packages
-
-### Patch Changes
-
-- Updated dependencies
-  - @muravjev/configs-ts@0.1.0
+- Create initial version

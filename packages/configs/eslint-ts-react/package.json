@@ -1,6 +1,6 @@
 {
   "name": "@muravjev/configs-eslint-ts-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Shared eslint config for lib (ts + react) packages",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",

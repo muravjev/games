@@ -1,6 +1,6 @@
 {
   "name": "@muravjev/configs-ts-next",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Shared typescript config for app (ts + next) packages",
   "author": "Sergey Muravjev <sergey.muravjev@gmail.com> (http://github.com/muravjev)",
