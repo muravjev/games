@@ -1,17 +1,11 @@
-export const isServer = typeof window === 'undefined';
-export const isClient = typeof window !== 'undefined';
-export const client = isServer ? 'server' : 'client';
+import { isServer, isClient, client } from './utils';
+import { noop, sleep, delay } from './utils';
+import { createDeferred } from './deferred';
 
-export const noop = () => undefined;
+import type { Deferred } from './deferred';
 
-export const sleep = (duration: number) => {
-    const start = Date.now();
-    let end = start;
-    while (end < start + duration) {
-        end = Date.now();
-    }
-};
+export { isServer, isClient, client };
+export { noop, sleep, delay };
+export { createDeferred };
 
-export const delay = async (duration: number) => {
-    return new Promise(resolve => setTimeout(resolve, duration));
-};
+export type { Deferred };

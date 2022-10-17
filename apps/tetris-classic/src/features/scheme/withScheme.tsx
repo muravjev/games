@@ -3,7 +3,7 @@ import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { createContext, useContext, useEffect } from 'react';
 import { useSdk } from 'features/sdk/withSdk';
-import { createDeferred } from '@muravjev/utils-deferred';
+import { createDeferred } from '@muravjev/utils-core';
 
 const SchemeContext = createContext<Promise<string> | null>(null);
 const SchemePromise = createDeferred<string>();

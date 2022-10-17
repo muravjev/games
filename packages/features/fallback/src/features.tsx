@@ -1,7 +1,7 @@
 import type { ComponentType } from 'react';
 
 import { useEffect, useState } from 'react';
-import { createDeferred } from '@muravjev/utils-deferred';
+import { createDeferred } from '@muravjev/utils-core';
 
 function withFallbackThunk<T extends object>(
     Fallback: ComponentType<T>,
