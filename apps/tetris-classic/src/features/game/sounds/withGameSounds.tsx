@@ -1,5 +1,5 @@
 import type { ComponentType, PropsWithChildren } from 'react';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 import type { TState } from 'features/hooks';
 import type { SoundsState } from './sounds';
 

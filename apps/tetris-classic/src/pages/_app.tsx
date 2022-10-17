@@ -1,4 +1,7 @@
-import { withFallback } from 'features/fallback/withFallback';
+import type { AppProps } from 'next/app';
+import type { SSRConfig as TranslationPageProps } from 'next-i18next';
+
+import { withFallback } from '@muravjev/features-fallback';
 import { withRoute } from 'features/route/withRoute';
 import { withError } from 'features/error/withError';
 import { withSounds } from 'features/sounds/withSounds';
@@ -34,7 +37,9 @@ const HeadIcons = () => (
     </>
 );
 
-function MyApp({ Component, pageProps }) {
+declare type MyAppProps = AppProps<TranslationPageProps>;
+
+function MyApp({ Component, pageProps }: MyAppProps) {
     return (
         <>
             <Head>
@@ -46,7 +51,7 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default withFallback(
+export default withFallback<MyAppProps>(
     withRoute,
     withError,
     withSounds,

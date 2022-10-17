@@ -1,0 +1,20 @@
+{
+  "name": "@muravjev/features-fallback",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Muravjev Sergey",
+  "description": "Shared features - fallback",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@muravjev/configs-eslint-ts-react": "workspace:*",
+    "@muravjev/configs-ts-react": "workspace:*",
+    "@types/node": "^18.11.0",
+    "@types/react": "^18.0.21",
+    "typescript": "4.8.4"
+  },
+  "dependencies": {
+    "@muravjev/utils-deferred": "workspace:^0.0.0",
+    "react": "18.2.0"
+  }
+}

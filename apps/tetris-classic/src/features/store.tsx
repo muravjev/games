@@ -1,5 +1,5 @@
-import type { FallbackCallbacks } from './fallback/withFallback';
-import type { ComponentType, PropsWithChildren } from 'react';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
@@ -25,7 +25,7 @@ const reducer = {
 
 export const store = configureStore({ reducer });
 
-export function withStore<T extends PropsWithChildren>(
+export function withStore<T extends object>(
     Component: ComponentType<T>,
     { resolve }: FallbackCallbacks
 ) {

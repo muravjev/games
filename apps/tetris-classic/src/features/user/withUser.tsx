@@ -1,12 +1,12 @@
-import type { ComponentType, PropsWithChildren } from 'react';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { useEffect } from 'react';
 import { useAppDispatch } from 'features/hooks';
 import { useSdk } from 'features/sdk/withSdk';
 import { setupUser } from 'features/user/userSlice';
 
-export function withUser<T extends PropsWithChildren>(
+export function withUser<T extends object>(
     Component: ComponentType<T>,
     { resolve, reject }: FallbackCallbacks
 ) {

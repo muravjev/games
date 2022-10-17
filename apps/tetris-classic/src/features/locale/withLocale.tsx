@@ -1,5 +1,5 @@
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
-import type { ComponentType, PropsWithChildren } from 'react';
+import type { ComponentType } from 'react';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
@@ -8,7 +8,7 @@ import { useSdk } from 'features/sdk/withSdk';
 import { selectLocale, setupLocale } from './localeSlice';
 
 //< @todo Current locale should be taken from sdk
-export function withLocale<T extends PropsWithChildren>(
+export function withLocale<T extends object>(
     Component: ComponentType<T>,
     { resolve }: FallbackCallbacks
 ) {

@@ -1,9 +1,9 @@
-import type { ComponentType, PropsWithChildren } from 'react';
+import type { ComponentType } from 'react';
 
 import { useEffect, useState } from 'react';
 import { createDeferred } from '@muravjev/utils-deferred';
 
-function withFallbackThunk<T extends PropsWithChildren>(
+function withFallbackThunk<T extends object>(
     Fallback: ComponentType<T>,
     promises: Promise<unknown>[]
 ) {
@@ -40,7 +40,7 @@ export type FallbackCallbacks = {
 
 type Func<T> = (Component: ComponentType<T>, callbacks: FallbackCallbacks) => ComponentType<T>;
 
-export function withFallback<T extends PropsWithChildren>(...fns: Func<T>[]) {
+export function withFallback<T extends object>(...fns: Func<T>[]) {
     return function (Component: ComponentType<T>, Fallback: ComponentType<T>): ComponentType<T> {
         const promises: Promise<unknown>[] = [];
         const compose = (component: ComponentType<T>, func: Func<T>) => {

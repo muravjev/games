@@ -1,6 +1,6 @@
 import type { ComponentType, PropsWithChildren } from 'react';
 import type { Theme } from '@mui/material/styles';
-import type { FallbackCallbacks } from 'features/fallback/withFallback';
+import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'features/hooks';
@@ -37,7 +37,7 @@ const WithTheme = ({ chosen, children }: Props) => {
     );
 };
 
-export function withTheme<T extends PropsWithChildren>(
+export function withTheme<T extends object>(
     Component: ComponentType<T>,
     { resolve, reject }: FallbackCallbacks
 ) {
