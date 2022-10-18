@@ -1,10 +1,10 @@
 {
-  "name": "@muravjev/utils-deferred",
-  "version": "0.1.0",
+  "name": "@muravjev/utils-core-ts",
+  "version": "0.1.2",
   "private": true,
   "license": "MIT",
   "author": "Muravjev Sergey",
-  "description": "Shared utils - deferred",
+  "description": "Shared typescript utils",
   "main": "src/index.ts",
   "devDependencies": {
     "@muravjev/configs-ts": "workspace:^",

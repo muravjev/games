@@ -5,7 +5,7 @@ export { default } from 'features/locale/LocaleRedirect';
 // import Page from 'controls/page/Page';
 // import Puzzle from 'components/puzzle/Puzzle';
 
-// import { client } from 'utils/utils';
+// import { client } from '@muravjev/utils-core';
 // console.log(client, 'compile puzzle');
 
 // export const getStaticProps = makeStaticProps(['common', 'page-puzzle', 'game']);

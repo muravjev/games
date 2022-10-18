@@ -6,7 +6,7 @@ import Home from 'components/home/Home';
 const getStaticProps = makeStaticProps(['common', 'page-home', 'menu']);
 export { getStaticPaths, getStaticProps };
 
-import { client } from 'utils/utils';
+import { client } from '@muravjev/utils-core';
 console.log(client, 'compile home');
 
 export default function HomePage() {

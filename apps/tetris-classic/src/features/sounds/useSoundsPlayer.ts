@@ -1,6 +1,6 @@
 import { CustomErrorWithParameter } from 'utils/errors';
 import { useRef } from 'react';
-import { isServer } from 'utils/utils';
+import { isServer } from '@muravjev/utils-core';
 import { ESounds } from 'config/sounds';
 
 declare global {

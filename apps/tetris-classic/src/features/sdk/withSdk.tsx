@@ -2,7 +2,7 @@ import type { ComponentType } from 'react';
 import type { FallbackCallbacks } from '@muravjev/features-fallback';
 
 import { createContext, useContext } from 'react';
-import { createDeferred } from '@muravjev/utils-deferred';
+import { createDeferred } from '@muravjev/utils-core';
 
 import dynamic from 'next/dynamic';
 

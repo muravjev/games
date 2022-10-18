@@ -1,10 +1,10 @@
 {
-  "name": "@muravjev/utils-typescript",
-  "version": "0.1.1",
+  "name": "@muravjev/utils-core",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "author": "Muravjev Sergey",
-  "description": "Shared typescript utils",
+  "description": "Shared utils - core",
   "main": "src/index.ts",
   "devDependencies": {
     "@muravjev/configs-ts": "workspace:^",

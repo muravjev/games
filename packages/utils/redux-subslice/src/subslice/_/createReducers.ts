@@ -1,6 +1,6 @@
-import type { Fn } from '@muravjev/utils-typescript';
+import type { Fn } from '@muravjev/utils-core-ts';
 
-import { getObjectKeys } from '@muravjev/utils-typescript';
+import { getObjectKeys } from '@muravjev/utils-core-ts';
 
 type Reducer<TSubsliceName extends string, TReducer> = TReducer extends (
     state: infer TState,

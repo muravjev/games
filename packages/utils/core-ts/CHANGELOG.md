@@ -1,4 +1,10 @@
-# @muravjev/utils-typescript
+# @muravjev/utils-core-ts
+
+## 0.1.2
+
+### Patch Changes
+
+- 8a568f1: Rename utils-typescript to utils-core-ts
 
 ## 0.1.1
 

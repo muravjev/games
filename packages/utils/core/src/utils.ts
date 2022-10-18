@@ -2,6 +2,8 @@ export const isServer = typeof window === 'undefined';
 export const isClient = typeof window !== 'undefined';
 export const client = isServer ? 'server' : 'client';
 
+export const noop = () => undefined;
+
 export const sleep = (duration: number) => {
     const start = Date.now();
     let end = start;

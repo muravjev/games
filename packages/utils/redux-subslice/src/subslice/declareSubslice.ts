@@ -1,5 +1,5 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { Fn, Mutable } from '@muravjev/utils-typescript';
+import type { Fn, Mutable } from '@muravjev/utils-core-ts';
 
 import { Action } from './_/createActions';
 

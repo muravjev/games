@@ -3,7 +3,7 @@ import { getStaticPaths, makeStaticProps } from 'features/locale/localeStatic';
 import Page from 'controls/page/Page';
 import Play from 'components/play/Play';
 
-import { client } from 'utils/utils';
+import { client } from '@muravjev/utils-core';
 console.log(client, 'compile play');
 
 const getStaticProps = makeStaticProps(['common', 'page-play', 'game']);

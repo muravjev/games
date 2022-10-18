@@ -1,10 +1,10 @@
+import { noop } from './utils';
+
 export type Deferred<T> = {
     resolve: (value: T) => void;
     reject: (reason?: unknown) => void;
     promise: Promise<T>;
 };
-
-const noop = () => undefined;
 
 export function createDeferred<T>(): Deferred<T> {
     let resolve: (value: T) => void = noop;
