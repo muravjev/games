@@ -39,23 +39,23 @@ jobs:
           pnpm --filter tetris-classic export
 
       - name: Create artifacts
-        if: ${{ inputs.create_artifacts }}
+        # if: ${{ inputs.create_artifacts }}
         uses: actions/upload-artifact@v3
         with:
           name: tetris
           path: apps/tetris-classic/.export
 
       - name: Deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: sand4rt/ftp-deployer@v1.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          sftp: false
+          cleanup: true
+          server: ${{ secrets.FTP_HOST }}
           port: ${{ secrets.FTP_PORT }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: 'apps/tetris-classic/.export/*'
-          remote_path: '/http'
-          sftp_only: true
-          delete_remote_files: true
+          local_folder: 'apps/tetris-classic/.export'
+          remote_folder: '/http'
 
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
