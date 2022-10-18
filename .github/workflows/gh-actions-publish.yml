@@ -45,6 +45,18 @@ jobs:
           name: tetris
           path: apps/tetris-classic/.export
 
+      - name: Deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          port: ${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_path: 'apps/tetris-classic/.export/*'
+          remote_path: '/http'
+          sftp_only: true
+          delete_remote_files: true
+
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
