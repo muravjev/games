@@ -1,5 +1,15 @@
 # tetris-classic
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies \[67d340a]
+- Updated dependencies \[8a568f1]
+  - @muravjev/features-fallback@0.1.1
+  - @muravjev/utils-redux-subslice@0.1.2
+  - @muravjev/utils-core@0.1.0
+
 ## 0.3.1
 
 ### Patch Changes
