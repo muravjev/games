@@ -34,11 +34,12 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm install
+          pnpm --filter tetris-classic export
 
       - name: Create artifacts
         if: ${{ inputs.create_artifacts }}
-        run: pnpm --filter tetris-classic export
         uses: actions/upload-artifact@v3
         with:
           name: tetris
