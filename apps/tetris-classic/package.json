@@ -9,7 +9,8 @@
     "build": "next build",
     "test": "jest",
     "test:coverage": "pnpm run test --coverage",
-    "export": "next build && next export -o .export && winrar-zip-build.bat tetris-classic",
+    "export": "pnpm build && next export -o .export",
+    "winrar": "pnpm export && winrar-zip-build.bat tetris-classic",
     "start": "next start",
     "lint": "next lint",
     "sass": "sass src:css --load-path src/styles --no-source-map -w"
