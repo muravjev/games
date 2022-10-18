@@ -57,9 +57,22 @@ jobs:
           local_folder: 'apps/tetris-classic/.export'
           remote_folder: '/http'
 
-      # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      # - name: List files in the repository
-      #   run: |
-      #     ls ${{ github.workspace }}
-      # - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+
+            Repository: ${{ github.repository }}
+
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+  # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+  # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+  # - name: List files in the repository
+  #   run: |
+  #     ls ${{ github.workspace }}
+  # - run: echo "🍏 This job's status is ${{ job.status }}."
