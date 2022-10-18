@@ -3,3 +3,4 @@ node_modules/
 .next/
 .export/
 .coverage/
+.changeset/
