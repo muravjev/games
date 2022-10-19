@@ -1,0 +1,102 @@
+name: Deploy Tetris
+run-name: deploy tetris 🚀
+strategy:
+  matrix:
+    app: [tetris-classic]
+
+on:
+  workflow_dispatch:
+    create_artifacts:
+      description: 'Create artifacts'
+      required: true
+      default: true
+      type: boolean
+  # push:
+  #   tags:
+  #     -'**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Find tag
+        id: tag
+        run: echo "TAG=`echo ${git describe --all --long | tr "-" " "}`" >> $GITHUB_ENV
+        # run: echo "::set-output name=step-one-output::hello from step one"
+
+      - name: Format tag
+        id: ftag
+        run: echo "FTAG=`echo ${git describe --all --long | tr "-" " "}`" >> $GITHUB_ENV
+        echo "Step tag output: ${{ steps.tag.outputs.TAG }}"
+
+      - name:
+          Get version
+          #run: echo "RELEASE_VERSION=`echo ${git describe --all --long | tr "-" " " | awk '{ print $3 }'}`" >> $GITHUB_ENV
+          #run: echo "RELEASE_VERSION=${git describe --all --long | tr "-" " " | awk '{ print $3 }'}" >> $GITHUB_ENV
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: '7.x'
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm --filter tetris-classic export
+
+      - name: Create artifacts
+        if: ${{ inputs.create_artifacts }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: tetris
+          path: apps/tetris-classic/.export
+
+      - name: Deploy file
+        uses: sand4rt/ftp-deployer@v1.5
+        with:
+          sftp: false
+          cleanup: true
+          host: ${{ secrets.FTP_HOST }}
+          port: ${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_folder: 'apps/tetris-classic/.export'
+          remote_folder: '/http'
+
+      - name: Send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            * 🚀 New version deployed
+
+            [Tetris](http://tetris.1gb.ru)
+
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+
+            Repository: ${{ github.repository }}
+
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+  # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+  # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+  # - name: List files in the repository
+  #   run: |
+  #     ls ${{ github.workspace }}
+  # - run: echo "🍏 This job's status is ${{ job.status }}."

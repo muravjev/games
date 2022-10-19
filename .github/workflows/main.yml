@@ -1,0 +1,25 @@
+name: Get Version
+
+on:
+    workflow_dispatch:
+        # inputs:
+        #     Name:
+        #         description: Who to greet
+        #         required: true
+        #         default: 'GitHub Actions'
+    push:
+
+jobs:
+    Hello:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Hello
+              uses: muravjev/actions/get-version
+              with:
+                  Name: 'muravjev'
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
